@@ -2,147 +2,152 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
+  background: #f4f6fc;
   color: #333;
 }
 
-/* HEADER */
-header {
-  background: #004aad;
-  color: white;
-  padding: 15px 40px;
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 18px 40px;
+  background: white;
+  border-bottom: 2px solid #d8d8e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-header .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #003d9d;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: white;
+.nav-links a {
+  margin-left: 22px;
   text-decoration: none;
-  font-size: 0.95rem;
+  color: #003d9d;
+  font-weight: 500;
 }
 
-/* HERO SECTION */
 .hero {
-  background: url('campus.jpg') center/cover no-repeat;
+  background: linear-gradient(to right, #003d9d, #0057d6);
   color: white;
   text-align: center;
-  padding: 140px 20px;
+  padding: 150px 20px;
 }
 
-.hero-text h1 {
-  font-size: 2.6rem;
+.hero h1 {
+  font-size: 2.8rem;
   margin-bottom: 10px;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
   margin-bottom: 20px;
 }
 
-.btn {
-  background: #004aad;
-  padding: 12px 25px;
-  color: white;
-  border-radius: 6px;
+.hero-btn {
+  background: gold;
+  color: #003d9d;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
 }
 
-/* PROGRAM STUDI SECTION */
 .prodi {
   padding: 60px 20px;
   text-align: center;
 }
 
 .prodi h2 {
-  color: #004aad;
   margin-bottom: 40px;
+  color: #003d9d;
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0 40px;
 }
 
-.card {
+.grid-card {
   background: white;
-  width: 300px;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #d5dcec;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.2s;
 }
 
-.card h3 {
-  color: #004aad;
+.grid-card:hover {
+  transform: translateY(-5px);
+}
+
+.grid-card h3 {
+  color: #003d9d;
   margin-bottom: 10px;
 }
 
-/* ABOUT */
 .about {
-  padding: 60px 20px;
+  padding: 70px 20px;
+  background: #e7eeff;
   text-align: center;
-  background: #f4f4f4;
 }
 
-.about p {
+.about-text {
   max-width: 700px;
   margin: auto;
-  font-size: 1.1rem;
 }
 
-/* FOOTER */
+.about h2 {
+  margin-bottom: 15px;
+  color: #003d9d;
+}
+
 footer {
-  background: #004aad;
+  background: #003d9d;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 16px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 992px) {
-  nav ul {
-    gap: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-text h1 {
-    font-size: 2rem;
+  .hero h1 {
+    font-size: 2.3rem;
   }
 }
 
 @media (max-width: 576px) {
-  .cards {
+  .navbar {
     flex-direction: column;
-    align-items: center;
   }
 
-  .card {
-    width: 90%;
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 
   .hero {
-    padding: 100px 20px;
+    padding: 110px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
   }
 }
